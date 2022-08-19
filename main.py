@@ -120,6 +120,37 @@ class tricks:
          dronebob.land()
          dronebob.close()
 
+  def obcourse(self):
+      power = 50
+      duration=.6
+      dronebob.pair()
+      dronebob.takeoff()
+      dronebob.set_throttle(-35)
+      dronebob.move(1.1)
+      dronebob.set_throttle(0)
+      dronebob.hover(1)
+      dronebob.set_roll(power)
+      dronebob.move(duration)
+      dronebob.set_roll(0)
+      dronebob.set_pitch(power)
+      dronebob.move(duration+.3)
+      dronebob.set_pitch(0)
+      dronebob.set_roll(-power-.5)
+      dronebob.move(duration+.6)
+      dronebob.set_roll(0)
+      dronebob.set_pitch(power)
+      dronebob.move(duration+.1)
+      dronebob.set_pitch(0)
+      dronebob.set_roll(power)
+      dronebob.move(duration)
+      dronebob.set_roll(0)
+      dronebob.set_pitch(power)
+      dronebob.move(duration*2)
+      dronebob.set_pitch(0)
+      dronebob.land()
+      dronebob.close()
+
+
 dronetricks=tricks()
 
 
@@ -133,7 +164,10 @@ if __name__ == '__main__':
     #dronetricks.ellipse1()
     #dronetricks.signwave()
     #dronetricks.spiral()
-    dronetricks.tri()
+    #dronetricks.tri()
+    dronetricks.obcourse()
+
+
 
 
 
